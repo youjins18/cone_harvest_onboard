@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>task_space_controller</name>
+  <version>0.1.0</version>
+  <description>Forest Cone Harvesting Robot의 RBDL 기반 task-space IK/궤적 컨트롤러 (온보드 실로봇 전용, MuJoCo/GLFW 불필요)</description>
+  <maintainer email="you@example.com">you</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>ament_index_cpp</depend>
+  <depend>eigen</depend>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <!-- RBDL(+urdfreader addon)은 시스템/외부 라이브러리이므로 rosdep 대상이 아님.
+       RBDL_BUILD_ADDON_URDFREADER=ON으로 빌드/설치 후 -DRBDL_DIR=... 로 CMake에 알려줘야 함. -->
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
